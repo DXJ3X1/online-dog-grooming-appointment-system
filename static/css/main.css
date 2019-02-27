@@ -1,0 +1,415 @@
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+  font-family: 'Helvetica Neue', 'Arial', serif;
+}
+
+* {
+  outline: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  min-height: 100%;
+  color: #444;
+}
+
+a {
+  color: #0069D0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1280px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.flashes {
+    margin: 0;
+    font-size: 22px;
+    padding: 5px;
+    list-style: none;
+    text-align: center;
+    color: #FFF;
+}
+
+.clear {
+    clear: both;
+}
+
+h1.title {
+  font-size: 40px;
+  font-weight: 300;
+  margin-top: 60px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+table.styled {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+
+table.left {
+    width: auto !important;
+    margin: 0px;
+}
+
+
+table.styled td,
+table.styled th {
+  padding: 12px;
+}
+
+table.styled th {
+  border-bottom: 1px solid #eee;
+}
+
+table.styled tbody tr + tr td {
+  border-top: 1px solid #eee;
+}
+
+button.flat {
+  background-color: #0069D0;
+  color: white;
+  border: none;
+  padding: 8px 22px;
+  text-align: center;
+  min-width: 80px;
+
+  -webkit-transition: all 0.1s ease-in-out;
+}
+
+button.flat:hover {
+  opacity: 0.8;
+}
+
+button.flat:active {
+  -webkit-transform: translate(0, 2px);
+}
+
+a.book_button {
+    display: block;
+    padding: 10px;
+    background: #0A0;
+    width: 100px;
+    color: #fff;
+    text-align: center;
+    float: right;
+    font-size: 18px;
+}
+
+a.book_button:hover {
+    cursor: pointer;
+    text-decoration: none;
+    background: #0C0;
+}
+
+a.home_check {
+    display: block;
+    padding: 10px;
+    background: #FC0;
+    width: 100px;
+    color: #fff;
+    text-align: center;
+    float: right;
+    font-size: 18px;
+}
+
+a.home_check:hover {
+    cursor: default;
+    text-decoration: none;
+}
+
+a.home_add {
+    display: block;
+    padding: 10px;
+    background: #FC0;
+    width: 100px;
+    color: #FC0;
+    background: #fff;
+    border: 1px solid #FC0;
+    text-align: center;
+    float: right;
+    font-size: 18px;
+}
+
+a.home_add:hover {
+    cursor: pointer;
+    text-decoration: none;
+    background: #FC0;
+    color: #fff;
+}
+
+
+
+input[type="text"],
+input[type="password"] {
+  background-color: #fcfcfc;
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-size: 16px;
+
+  -webkit-transition: border-color 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #888;
+}
+
+.t-cent {
+    text-align: center;
+}
+
+/*
+=================================================================
+LAYOUT
+=================================================================
+*/
+
+.body-container {
+  min-height: 100%;
+  padding-bottom: 200px;
+  box-sizing: border-box;
+}
+
+.page-header {
+  background-color: #673AB7;
+  color: #C6B3E6;
+  overflow: hidden;
+}
+
+.page-header .container {
+  position: relative;
+  height: 80px;
+  box-sizing: border-box;
+}
+
+.page-header .title {
+  /*position: absolute;*/
+  float: left;
+  /*left: -10px;*/
+  top: 0;
+  bottom: 0;
+  color: inherit;
+
+  display: inline-table;
+}
+
+.page-header .title a {
+  display: inline-block;
+  color: inherit;
+  /*height: 80px;*/
+  padding: 0 10px;
+  display: table-cell;
+  vertical-align: bottom;
+  -webkit-transition: all 0.1s ease-in-out;
+}
+
+.page-header .title a:hover {
+  color: #E1F5FE;
+  text-decoration: none !important;
+  /*background-color: #7E57C2;*/
+
+}
+
+.page-header .title .inner {
+  display: block;
+  height: auto;
+  /*line-height: 80px;*/
+  font-size: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  -webkit-transform: translate(0, 12px);
+}
+
+.page-header .title .inner::after {
+  content: 'Tom\'s Dog Grooming';
+}
+
+@media (max-width: 1020px) {
+  .page-header .title .inner::after {
+    content: 'TDG';
+  }
+}
+
+.page-footer {
+  background-color: #252525;
+  position: relative;
+  z-index: 10;
+  height: 50px;
+  margin-top: -50px;
+  padding: 10px 0;
+  box-sizing: border-box;
+  color: #666;
+  font-weight: 300;
+}
+
+.page-footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-footer li {
+  margin: 5px 0;
+}
+
+.page-footer span {
+  color: inherit;
+  font-size: 14px;
+}
+
+.page-footer a {
+  color: inherit;
+}
+
+.page-footer p {
+  font-size: 14px;
+}
+
+ul.page-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: #C6B3E6;
+  position: absolute;
+  right: 0;
+}
+
+ul.page-nav li {
+  display: inline-table;
+  vertical-align: top;
+}
+
+ul.page-nav a {
+  display: table-cell;
+  vertical-align: bottom;
+  text-transform: lowercase;
+  font-weight: 200;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+    line-height: 80px;
+        padding: 0px 10px;
+  -webkit-transition: all 0.1s ease-in-out;
+}
+
+ul.page-nav a:hover,
+ul.page-nav a.active {
+    background-color: #472c77;
+
+    color: #E1F5FE;
+
+}
+
+/*
+=================================================================
+DASHBOARD
+=================================================================
+*/
+
+.details td {
+  padding: 6px 0;
+  font-size: 18px;
+}
+
+.details td:first-child {
+  text-align: right;
+  font-weight: bold;
+  padding-right: 10px;
+  color: #888;
+}
+
+/*.details td:last-child {
+  padding-left: 10px;
+  border-left: 1px solid #ddd;
+}*/
+.details td:nth-child(2) {
+  padding-left: 10px;
+  border-left: 1px solid #ddd;
+}
+
+/*
+=================================================================
+NEW BOOKING
+=================================================================
+*/
+
+form.newbooking {
+  margin: 0 auto;
+  width: 500px;
+}
+
+form.newbooking button[type="submit"] {
+  display: block;
+  margin: 30px auto;
+}
+
+/*
+=================================================================
+LOG IN
+=================================================================
+*/
+
+form.login {
+  margin: 0 auto;
+  width: 300px;
+}
+
+form.login input {
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+}
+
+form.login button[type="submit"] {
+  display: block;
+  width: 50%;
+  margin: 30px auto;
+}
+
+/*
+=================================================================
+BOOKINGS LIST
+=================================================================
+*/
+
+a.booking-detail-button {
+    display: block;
+    padding: 6px;
+    width: 90px;
+    text-align: center;
+    background: #0091EA;
+    color: #fff;
+}
+
+a.booking-detail-button:hover {
+    cursor: pointer;
+    background: #00B0FF;
+    text-decoration: none;
+}
+
+/*
+=================================================================
+Add Dog Forms
+=================================================================
+*/
+form.add-dog {
+    padding: 16px;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}

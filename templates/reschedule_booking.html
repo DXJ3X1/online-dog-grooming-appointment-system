@@ -1,0 +1,29 @@
+{% include 'top.html' %}
+
+<div class="content">
+    <div class="container">
+        <h1 class="title">Reschedule Booking</h1>
+
+        <form class="newbooking pure-form pure-form-aligned" method="POST" action="{{url_for('reschedule_booking')}}">
+            <div class="pure-control-group">
+                <label for="booking_id"> Booking ID: </label>
+                <input type="text" name="booking_id" value={{booking_id}} readonly>
+            </div>
+            <div class="pure-control-group">
+                <label for="book_date"> Date: </label>
+                <input type="text" name="book_date" value={{b_date}} readonly>
+            </div>
+            <div class="pure-control-group">
+                <label for="book_hour"> Start Hour: </label>
+                <select name="book_hour" placeholder="Time" required>
+                    {% for hour in times %}
+                        <option value="{{hour}}">{{hour}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="flat">Reschedule Booking</button>
+        </form>
+    </div>
+</div>
+
+{% include 'bottom.html' %}

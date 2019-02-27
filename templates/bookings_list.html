@@ -1,0 +1,36 @@
+{% include 'top.html' %}
+<div class="content">
+    <div class="container">
+        <h1 class="title">My Bookings</h1>
+        <table class="styled" id="booking_list_table">
+        <thead>
+            <tr>
+                <th>Dog Name</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Start Time</th>
+                <th>Duration</th>
+                <th></th>
+            </tr>
+        </thead>
+        {% if bookings %}
+        <tbody>
+            {% for item in bookings %}
+            <tr class="clickable-tr" data-href="{{url_for('my_bookings')}}?booking={{item[5]}}">
+                <td>{{ item[0] }}</td>
+                <td>{{ item[1] }}</td>
+                <td>{{ item[2] }}</td>
+                <td>{{ item[3] }}</td>
+                <td>{{ item[4] }}</td>
+                <td><a class="booking-detail-button" href="{{url_for('my_bookings')}}?booking={{item[5]}}">View Details</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+        {% else %}
+        </table>
+        <h1 class="t-cent">You haven't made any bookings</h1>
+        {% endif %}
+    </div>
+</div>
+{% include 'bottom.html' %}

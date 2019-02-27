@@ -1,0 +1,41 @@
+{% include 'admin_top.html' %}
+<div class="content">
+    <div class="container">
+        <h1 class="title">Upcoming Bookings</h1>
+        <table class="styled" id="booking_list_table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Dog Name</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Start Time</th>
+                <th>Duration</th>
+                <th></th>
+            </tr>
+        </thead>
+        {% if bookings %}
+        <tbody>
+            {% for item in bookings %}
+            <tr>
+                <td>{{ item[0] }}</td>
+                <td>{{ item[1] }}</td>
+                <td>{{ item[2] }}</td>
+                <td>{{ item[3] }}</td>
+                <td>{{ item[4] }}</td>
+                <td>{{ item[5] }}</td>
+                <td>{{ item[6] }}</td>
+                <td>{{ item[7] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+        {% else %}
+        </table>
+        <h1 class="t-cent">There're no upcoming bookings</h1>
+        {% endif %}
+    </div>
+</div>
+{% include 'bottom.html' %}

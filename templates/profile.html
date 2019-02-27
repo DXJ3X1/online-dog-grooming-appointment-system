@@ -1,0 +1,36 @@
+{% include 'top.html' %}
+<div class="content">
+    <div class="container">
+        <h1 class="title">Profile</h1>
+
+        <form class="newbooking pure-form pure-form-aligned" method="POST" action="{{url_for('profile')}}">
+            <div class="pure-control-group">
+                <label for="first"> First Name: </label>
+                <input type="text" name="first" value="{{ user.first }}">
+            </div>
+            <div class="pure-control-group">
+                <label for="family"> Family Name: </label>
+                <input type="text" name="family" value="{{ user.family }}">
+            </div>
+            <div class="pure-control-group">
+                <label for="address"> Address: </label>
+                <input type="text" name="address" value="{{ user.address }}">
+            </div>
+            <div class="pure-control-group">
+                <label for="mobile_phone"> Mobile Phone: </label>
+                <input type="text" name="mobile_phone" value="{{ user.mobile_phone }}">
+            </div>
+            <div class="pure-control-group">
+                <label for="work_phone"> Work Phone: </label>
+                <input type="text" name="work_phone" value="{{ user.work_phone }}">
+            </div>
+            <div class="pure-control-group">
+                <label for="home_phone"> Home Phone: </label>
+                <input type="text" name="home_phone" value="{{ user.home_phone }}">
+            </div>
+            <button type="submit" class="flat">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% include 'bottom.html' %}

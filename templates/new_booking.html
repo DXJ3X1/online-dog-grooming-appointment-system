@@ -1,0 +1,51 @@
+{% include 'top.html' %}
+
+<div class="content">
+    <div class="container">
+        <h1 class="title">New Booking</h1>
+
+        <form class="newbooking pure-form pure-form-aligned" method="POST" action="{{url_for('new_booking')}}">
+            <div class="pure-control-group">
+                <label for="dog_name"> Dog: </label>
+                <select name="dog_name" placeholder="Dog" autofocus required>
+                    {% for dog in dogs %}
+                        <option value="{{dog['name']}}">{{dog['name']}} ({{dog['breed']}})</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="pure-control-group">
+                <label for="book_date"> Date: </label>
+                <input type="text" name="book_date" value={{b_date}} readonly>
+            </div>
+            <div class="pure-control-group">
+                <label for="book_hour"> Start Hour: </label>
+                <select name="book_hour" placeholder="Time" required>
+                    {% for hour in times %}
+                        <option value="{{hour}}">{{hour}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="pure-control-group">
+                <label for="duration"> Duration: </label>
+                <select name="duration" placeholder="Time" required>
+                    <option value="01:30">1.5 hours</option>
+                </select>
+            </div>
+            <div class="pure-control-group">
+                <label for="grooming_type"> Grooming Type: </label>
+                <select name="grooming_type" placeholder="Grooming Type" required>
+                    {% for option in options %}
+                        <option value="{{option}}">{{option}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="pure-control-group">
+                <label for="description"> Description: </label>
+                <input type="text" name="description">
+            </div>
+            <button type="submit" class="flat">Create Booking</button>
+        </form>
+    </div>
+</div>
+
+{% include 'bottom.html' %}

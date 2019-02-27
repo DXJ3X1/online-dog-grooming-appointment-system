@@ -1,0 +1,11 @@
+{% include 'top.html' %}
+    <div class="content">
+        <h1 class="title">Log in</h1>
+
+        <form class="login" method="POST" action="{{url_for('login')}}">
+            <input type="text" name="email" placeholder="Email" autofocus required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button class="flat" type="submit">Log in</button>
+        </form>
+    </div>
+{% include 'bottom.html'%}

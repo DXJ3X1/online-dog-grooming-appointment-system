@@ -1,0 +1,26 @@
+{% include 'top.html' %}
+
+<div class="content">
+    <div class="container">
+        
+        {% if booking_id %}
+        <h1 class="title">Reschedule Booking</h1>
+        <form class="newbooking pure-form pure-form-aligned" method="GET" action="{{url_for('reschedule_booking')}}">
+            <div class="pure-control-group">
+                <label for="booking"> Booking ID: </label>
+                <input type="text" name="booking" value={{ booking_id }} readonly>
+            </div>
+        {% else %}
+        <h1 class="title">New Booking</h1>
+        <form class="newbooking pure-form pure-form-aligned" method="GET" action="{{url_for('new_booking')}}">
+        {% endif %}
+            <div class="pure-control-group">
+                <label for="b_date"> Date: </label>
+                <input type="date" name="b_date" placeholder="YYYY-MM-DD" required>
+            </div>
+            <button type="submit" class="flat">Next</button>
+        </form>
+    </div>
+</div>
+
+{% include 'bottom.html' %}

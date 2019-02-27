@@ -1,0 +1,47 @@
+{% include 'top.html' %}
+<div class="content">
+    <div class="container details">
+        <h1 class="title"> Welcome, {{ user.first }}</h1>
+        <table>
+            <tr>
+                <td> Name </td>
+                <td> {{ user.first }} {{ user.family }} </td>
+            </tr>
+            <tr>
+                <td> Address </td>
+                <td> {{ user.address }} </td>
+            </tr>
+            {% if user.mobile_phone %}
+            <tr>
+                <td> Mobile Phone </td>
+                <td> {{ user.mobile_phone }} </td>
+            </tr>
+            {% endif %}
+            {% if user.work_phone %}
+            <tr>
+                <td> Work Phone </td>
+                <td> {{ user.work_phone }} </td>
+            </tr>
+            {% endif %}
+            {% if user.home_phone %}
+            <tr>
+                <td> Home Phone </td>
+                <td> {{ user.home_phone }} </td>
+            </tr>
+            {% endif %}
+            {% if dogs %}
+                <tr>
+                    <td> Dogs </td>
+                    <td> {{ dogs[0].name }}, {{ dogs[0].breed }}, born on {{ dogs[0].birthdate }} </td>
+                </tr>
+            {% for dog in dogs[1:] %}
+                <tr>
+                    <td></td>
+                    <td> {{ dog.name }}, {{ dog.breed }}, born on {{ dog.birthdate }} </td>
+                </tr>
+            {% endfor %}
+            {% endif %}
+        </table>
+    </div>
+</div>
+{% include 'bottom.html'%}

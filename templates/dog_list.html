@@ -1,0 +1,35 @@
+{% include 'top.html' %}
+
+<div class="content">
+    <div class="container">
+        <h1 class="title">Dogs</h1>
+        <table class="styled">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Breed</th>
+                    <th>Birthday / YYYY-MM-DD</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                    {% for dog in dogs %}
+                    <tr>
+                        <td>{{ dog['name'] }}</td>
+                        <td>{{ dog['breed'] }}</td>
+                        <td>{{ dog['birthdate'] }}</td>
+                        <td><a class="home_add" href="{{url_for('dog')}}?dog={{dog['name']}}&action=remove">Remove</a></td>
+                    </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+        <form class="add-dog" method="POST" action="{{url_for('list_dogs')}}">
+            <input type="text" name="name" placeholder="Name" autofocus required>
+            <input type="text" name="breed" placeholder="Breed">
+            <input type="text" name="birthdate" placeholder="Birthday">
+            <button class="flat" type="submit">Add Dog</button>
+        </form>
+    </div>
+</div>
+
+{% include 'bottom.html' %}
