@@ -1,6 +1,6 @@
 ## Introduction
 
-The online dog grooming appointment system has functions involving logging, edit user’s information, modify appointment, reminder and view the booking list.
+The online dog grooming appointment system has features including user authentication, searching, making new appointment, rescheduling existing appointments, viewing appointment history, and upcoming appointment reminder.
 
 Used PostgresSQL for database, Flask for web framework, Python library pg8000 for connecting database and fetching data.
 
